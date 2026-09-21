@@ -56,12 +56,35 @@ function AuthPage() {
         }
         void navigate({ to: "/admin", replace: true });
       } else {
-        const { error } = await supabase.auth.signInWithPassword({
+        const { data, error } = await supabase.auth.signInWithPassword({
           email: email.trim(),
           password,
         });
-        if (error) throw error;
-        void navigate({ to: "/admin", replace: true });
+        if (!error && data.session) {
+          void navigate({ to: "/admin", replace: true });
+          return;
+        }
+
+        // If the owner account has not been created yet, create it using
+        // the credentials entered on this page, then sign in when Supabase
+        // allows immediate sessions. This keeps the password out of source
+        // control and uses Supabase Auth for credential storage.
+        const { data: signupData, error: signupError } = await supabase.auth.signUp({
+          email: email.trim(),
+          password,
+          options: { emailRedirectTo: window.location.origin + "/admin" },
+        });
+
+        if (signupError) {
+          throw error ?? signupError;
+        }
+
+        if (signupData.session) {
+          void navigate({ to: "/admin", replace: true });
+          return;
+        }
+
+        setSentConfirmation(true);
       }
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Something went wrong");
