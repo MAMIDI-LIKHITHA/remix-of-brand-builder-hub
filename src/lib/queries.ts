@@ -16,8 +16,21 @@ function unwrap<T>(res: { data: T | null; error: { message: string } | null }): 
 export const settingsQuery = queryOptions({
   queryKey: ["site_settings"],
   staleTime: 30_000,
-  queryFn: async () =>
-    unwrap<SiteSettings>(await supabase.from("site_settings").select("*").eq("id", "main").single()),
+  queryFn: async () => {
+    const settings = unwrap<SiteSettings>(
+      await supabase.from("site_settings").select("*").eq("id", "main").single(),
+    );
+    return {
+      ...settings,
+      business_name: "Aaron Sau",
+      tagline: "Available 🇸🇦🇶🇦🇪🇭🇦🇪🇧🇭🇴🇲",
+      hero_heading: "Aaron Sau",
+      hero_subheading: "1 post · 539 followers · 1,312 following",
+      about_heading: "About Aaron Sau",
+      instagram_url: "https://www.instagram.com/aroon10153/?hl=en",
+      footer_text: "Aaron Sau — Available 🇸🇦🇶🇦🇪🇭🇦🇪🇧🇭🇴🇲",
+    } satisfies SiteSettings;
+  },
 });
 
 export const categoriesQuery = queryOptions({
