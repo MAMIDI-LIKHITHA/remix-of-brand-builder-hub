@@ -1,11 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { ArrowRight, MessageCircle, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { SiteLayout } from "@/components/site/SiteLayout";
-import { ProductCard, ServiceCard, ImageFrame } from "@/components/site/Cards";
-import { settingsQuery, productsQuery, servicesQuery, galleryQuery } from "@/lib/queries";
-import { mediaUrl } from "@/lib/media";
+
+import { settingsQuery } from "@/lib/queries";
+
 import { whatsappLink } from "@/lib/whatsapp";
 import { Button } from "@/components/ui/button";
 
