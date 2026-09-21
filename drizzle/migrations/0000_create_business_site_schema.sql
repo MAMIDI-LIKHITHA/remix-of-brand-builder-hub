@@ -155,7 +155,7 @@ create trigger gallery_touch before update on public.gallery_images
 -- SITE SETTINGS (single row) -----------------------------------------
 create table public.site_settings (
   id text primary key default 'main',
-  business_name text not null default 'fts88994',
+  business_name text not null default 'Aaron Sau',
   tagline text,
   logo_url text,
   hero_heading text,
@@ -201,17 +201,17 @@ insert into public.site_settings (
   instagram_url, address, footer_text
 ) values (
   'main',
-  'fts88994',
-  '😍 أهلا بك يا كوستمور الحلو 😍',
-  'fts88994',
-  'Qatar · Dubai',
+  'Aaron Sau',
+  'Available 🇸🇦🇶🇦🇪🇭🇦🇪🇧🇭🇴🇲',
+  'Aaron Sau',
+  'Aaron Sau',
   'View Products',
   'Our Services',
   'About us',
   'Add your business introduction here from the admin panel.',
   'Get in touch',
   'Message us on WhatsApp and we will get back to you.',
-  'https://www.instagram.com/fts88994',
+  'https://www.instagram.com/aroon10153/?hl=en',
   'Qatar · Dubai',
   'fts88994 — Qatar · Dubai'
 );
