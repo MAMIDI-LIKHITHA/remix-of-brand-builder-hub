@@ -73,6 +73,31 @@ function HomePage() {
         </div>
       </section>
 
+      <section className="section-shell py-16 md:py-20">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="eyebrow mb-3">Availability</p>
+          <h2 className="text-3xl md:text-4xl">Available in these countries</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+            Products and services are available across the following markets.
+          </p>
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
+            {[
+              ["🇸🇦", "Saudi Arabia"],
+              ["🇶🇦", "Qatar"],
+              ["🇪🇭", "Western Sahara"],
+              ["🇦🇪", "United Arab Emirates"],
+              ["🇧🇭", "Bahrain"],
+              ["🇴🇲", "Oman"],
+            ].map(([flag, country]) => (
+              <div key={country} className="rounded-xl border bg-background px-4 py-5 text-left">
+                <span className="text-2xl">{flag}</span>
+                <p className="mt-2 font-medium">{country}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-sand py-16">
         <div className="section-shell text-center">
           <p className="text-sm font-medium text-muted-foreground">Instagram</p>
