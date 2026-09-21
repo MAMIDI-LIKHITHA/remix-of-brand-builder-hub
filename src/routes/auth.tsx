@@ -11,10 +11,10 @@ import { Label } from "@/components/ui/label";
 export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
-      { title: "Owner login — fts88994" },
-      { name: "description", content: "Secure sign-in for the fts88994 website owner." },
+      { title: "Owner login — Aaron Sau" },
+      { name: "description", content: "Secure sign-in for the Aaron Sau website owner." },
       { name: "robots", content: "noindex" },
-      { property: "og:title", content: "Owner login — fts88994" },
+      { property: "og:title", content: "Owner login — Aaron Sau" },
       { property: "og:description", content: "Secure sign-in for the website owner." },
     ],
   }),
@@ -24,7 +24,7 @@ export const Route = createFileRoute("/auth")({
 function AuthPage() {
   const navigate = useNavigate();
   const [mode, setMode] = useState<"signin" | "signup">("signin");
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("aaronsau@gmail.com");
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
   const [sentConfirmation, setSentConfirmation] = useState(false);
@@ -73,7 +73,7 @@ function AuthPage() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-sand px-5 py-16">
       <Link to="/" className="mb-8 font-display text-2xl font-semibold">
-        fts88994
+        Aaron Sau
       </Link>
 
       <div className="surface-card w-full max-w-md p-8">
