@@ -20,10 +20,10 @@ export function Footer() {
     <footer className="mt-24 bg-ink text-ink-foreground">
       <div className="section-shell grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-3">
-          <p className="font-display text-xl font-semibold">{s?.business_name ?? "fts88994"}</p>
+          <p className="font-display text-xl font-semibold">{s?.business_name ?? "Aaron Sau"}</p>
           {s?.tagline ? (
             <p className="font-arabic text-sm text-ink-foreground/70">{s.tagline}</p>
-          ) : null}
+          ) : <p className="text-sm text-ink-foreground/70">Available 🇸🇦🇶🇦🇪🇭🇦🇪🇧🇭🇴🇲</p>}
           {s?.footer_text ? (
             <p className="text-sm text-ink-foreground/60">{s.footer_text}</p>
           ) : null}
@@ -114,7 +114,7 @@ export function Footer() {
       <div className="border-t border-ink-foreground/10">
         <div className="section-shell flex flex-col gap-2 py-5 text-xs text-ink-foreground/50 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {new Date().getFullYear()} {s?.business_name ?? "fts88994"}. All rights reserved.
+            © {new Date().getFullYear()} {s?.business_name ?? "Aaron Sau"}. All rights reserved.
           </p>
           <Link to="/auth" className="hover:text-ink-foreground/80">
             Owner login
