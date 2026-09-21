@@ -87,7 +87,11 @@ function AuthPage() {
         setSentConfirmation(true);
       }
     } catch (err) {
-      toast.error(err instanceof Error ? err.message : "Something went wrong");
+      toast.error(
+        err instanceof Error
+          ? err.message
+          : "Login failed. Please verify the Aaron Sau Supabase account is provisioned."
+      );
     } finally {
       setBusy(false);
     }
